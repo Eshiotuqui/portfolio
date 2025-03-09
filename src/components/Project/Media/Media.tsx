@@ -39,22 +39,32 @@ const Media = () => {
       <div className="flex flex-col lg:gap-9 gap-6">
         <div className="flex lg:flex-row flex-col lg:gap-9 gap-6">
           <div className="w-full h-fit  overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
-            <source src={`/media/${project.id}/test.png`} type="image/png" />
-            <img
-              src={`/media/${project.id}/test.png`}
-              className="w-full h-fit object-fill"
-              alt="Landing page"
-              loading="lazy"
-            />
+            <picture className="w-[20%] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50 overflow-hidden">
+              <source
+                src={`/media/${project.id}/mobile.png`}
+                type="image/png"
+              />
+              <img
+                src={`/media/${project.id}/mobile.png`}
+                className="w-full h-fit object-cover"
+                loading="lazy"
+                alt="Landing page"
+              />
+            </picture>
           </div>
           <div className="w-full  overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
-            <source src={`/media/${project.id}/test2.png`} type="image/png" />
-            <img
-              src={`/media/${project.id}/test2.png`}
-              className="w-full h-fit object-cover"
-              alt="Landing page"
-              loading="lazy"
-            />
+            <picture className="w-[20%] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50 overflow-hidden">
+              <source
+                src={`/media/${project.id}/mobile.png`}
+                type="image/png"
+              />
+              <img
+                src={`/media/${project.id}/mobile.png`}
+                className="w-full h-fit object-cover"
+                loading="lazy"
+                alt="Landing page"
+              />
+            </picture>
           </div>
         </div>
         <div className="flex lg:flex-row flex-col lg:gap-9 gap-6">

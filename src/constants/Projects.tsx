@@ -85,7 +85,7 @@ export const projects = [
     title: "Thanos Store",
     subtitle: "Landing Page loja de tênis",
     description:
-      "Landing page para uma loja de tênis, o nome vem em homenagem ao meu cachorro Thanos rs... A tela possui carrol dinâmico ao escolher o thanos, poder escolher cor do calçado, tela de checkout de pagamento e muito mais, simulando bem uma tela de compra de uma loja de tênis",
+      "Landing page para uma loja de tênis. A tela possui carrol dinâmico ao escolher o thanos, poder escolher cor do calçado, tela de checkout de pagamento e muito mais.",
     image: imgThanos,
     video: videoThanos,
     link: "https://thanosstore.netlify.app/",
