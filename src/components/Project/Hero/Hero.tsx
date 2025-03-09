@@ -152,33 +152,28 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-            {project.link && project.link != "" ? (
-              <a
-                href={project?.link}
-                className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
-              >
-                Visitar Projeto
-                <ExternalLink strokeWidth={2.5} />
-              </a>
-            ) : null}
-
-            {project?.git && project?.git != "" && (
-              <a
-                href={project?.git}
-                className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
-              >
-                GitHub
-                <ExternalLink strokeWidth={2.5} />
-              </a>
-            )}
+            <a
+              href={project?.link}
+              className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
+            >
+              Visitar Projeto
+              <ExternalLink strokeWidth={2.5} />
+            </a>
           </div>
           <div
-            className={`"lg:max-h-[300svh] h-fit"
-          } overflow-hidden flex lg:gap-9 gap-6 `}
+            id="heroVideo"
+            className="hero heroVideo relative w-full h-full z-0 lg:rounded-2xl !rounded-2xl overflow-hidden border-2 border-gray-50"
           >
-            <video preload="none" muted autoPlay playsInline>
+            <video
+              preload="none"
+              muted
+              autoPlay
+              playsInline
+              className="w-full h-full object-cover cursor-pointer"
+            >
               <source src={`/${project.video}.mp4`} />
             </video>
+            <source type="video/mp4" />
           </div>
         </div>
         <div className="absolute heroBottom bottom-0 left-0 w-full common-py flex items-center justify-between">
