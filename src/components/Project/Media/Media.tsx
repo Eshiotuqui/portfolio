@@ -19,18 +19,6 @@ const Media = () => {
 
   return (
     <section id="Media" className="w-full flex flex-col lg:gap-9 gap-6">
-      <div className="w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline={true}
-        >
-          <source src={`/media/${project.id}/big1.webm`} type="video/webm" />
-          <source src={`/media/${project.id}/big1.mp4`} type="video/mp4" />
-        </video>
-      </div>
       <div className="flex flex-col relative">
         <div
           ref={imagesContainerRef}

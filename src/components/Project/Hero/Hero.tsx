@@ -120,7 +120,7 @@ const Hero = () => {
 
   return (
     <section className="gsapRef w-full h-[200svh]">
-      <div className="gsapPin w-full h-[100svh] flex flex-center relative">
+      <div className="gsapPin w-full h-[100svh] flex flex-center relative mt-14">
         <div className="projectHero w-full md:h-[65vh] h-auto flex lg:flex-row flex-col lg:items-center items-start justify-between lg:gap-16 md:gap-11 sm:gap-6 gap-6">
           <div className="projectTexts ml-0 max-w-[600px] w-full flex flex-col lg:gap-16 md:gap-11 sm:gap-6 gap-6 flex-shrink-0">
             <div className="flex flex-col md:gap-1 gap-0">
@@ -131,7 +131,7 @@ const Hero = () => {
                 {project.subtitle}
               </p>
             </div>
-            <div className="flex lg:gap-16 md:gap-11 sm:gap-6 gap-6">
+            <div className="flex lg:gap-16 md:gap-11 sm:gap-6 gap-6 ">
               <div className="flex flex-col md:gap-2 gap-0 flex-shrink-0">
                 <h4 className="hero projectText text-2xl">Serviços</h4>
                 <ul>
@@ -152,28 +152,23 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-            <a
-              href={project?.link}
-              className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
-            >
-              Visitar Projeto
-              <ExternalLink strokeWidth={2.5} />
-            </a>
+            {project.link && project ? (
+              <a
+                href={project?.link}
+                className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
+              >
+                Visitar Projeto
+                <ExternalLink strokeWidth={2.5} />
+              </a>
+            ) : null}
           </div>
           <div
-            id="heroVideo"
-            className="hero heroVideo relative w-full h-full z-0 lg:rounded-2xl !rounded-2xl overflow-hidden border-2 border-gray-50"
+            className={`"lg:max-h-[300svh] h-fit"
+          } overflow-hidden flex lg:gap-9 gap-6 `}
           >
-            <video
-              preload="none"
-              muted
-              autoPlay
-              playsInline
-              className="w-full h-full object-cover cursor-pointer"
-            >
+            <video preload="none" muted autoPlay playsInline>
               <source src={`/${project.video}.mp4`} />
             </video>
-            <source type="video/mp4" />
           </div>
         </div>
         <div className="absolute heroBottom bottom-0 left-0 w-full common-py flex items-center justify-between">

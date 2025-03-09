@@ -37,7 +37,7 @@ export const projects = [
     title: "Weather.io",
     subtitle: "Veje informações sobre o clima de qualquer lugar do mundo!",
     description:
-      "Dashboard weather.io que utiliza a API OpenWeather, mostra clima do local que quiser, mostrando previsão de 5 dias, qualidade do ar, umidade relativa, temperatura durante o dia e muito mais!",
+      "Dashboard weather.io que utiliza a API OpenWeather, mostra clima do local que quiser, mostrando previsão de 5 dias, temperatura durante o dia e muito mais!",
     image: imgWeather,
     video: videoWeather,
     link: "https://eweatherio.netlify.app/#/current-location",
@@ -85,7 +85,7 @@ export const projects = [
     title: "Thanos Store",
     subtitle: "Landing Page loja de tênis",
     description:
-      "Landing page para uma loja de tênis. A tela possui carrol dinâmico ao escolher o thanos, poder escolher cor do calçado, tela de checkout de pagamento e muito mais.",
+      "Landing page para uma loja de tênis. A tela possui carrosel, tela de checkout de pagamento, escolha de cor e muito mais.",
     image: imgThanos,
     video: videoThanos,
     link: "https://thanosstore.netlify.app/",
