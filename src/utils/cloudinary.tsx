@@ -6,7 +6,7 @@ import { format } from "@cloudinary/url-gen/actions/delivery";
 // Create Cloudinary instance
 export const cld = new Cloudinary({
   cloud: {
-    cloudName: "dlctgjogh", // Replace with your Cloudinary cloud name
+    cloudName: "dlctgjogh",
   },
 });
 

@@ -19,7 +19,7 @@ const Journey = () => {
           começar minha jornada
         </p>
         <p className="gsapTextJourney textAbout">
-          Foi nesse decisão que encontrei a paixão em transformar ideias de
+          Foi nessa decisão que encontrei a paixão em transformar ideias de
           clientes em interfaces que realmente conectam com as pessoas. E
           transformar ideias em projetos virou minha maior paixão
         </p>

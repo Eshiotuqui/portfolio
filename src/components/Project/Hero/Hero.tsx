@@ -3,9 +3,9 @@ import { projects } from "../../../constants/Projects";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { heroAnimateWithGsap } from "../../../utils/animations";
-import { ChevronDown, ExternalLink, Pause, Play } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
-import { AdvancedVideo } from "@cloudinary/react";
+import { ChevronDown, ExternalLink } from "lucide-react";
+import { useEffect, useRef } from "react";
+
 import { AdvancedVideo as AdvancedVideoComponent } from "@cloudinary/react";
 
 interface Params {
@@ -17,7 +17,6 @@ const Hero = () => {
   const { id } = useParams<Params>();
   const project = projects.find((p) => p.id === id);
 
-  const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<AdvancedVideoComponent | null>(null); // Ref for the AdvancedVideo component
 
   useGSAP(() => {
@@ -100,37 +99,6 @@ const Hero = () => {
     });
   };
 
-  const handleVideoClick = async () => {
-    if (!videoRef.current?.videoRef.current) return;
-
-    const video = videoRef.current.videoRef.current;
-
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-      video.style.objectFit = "cover";
-      video.muted = true;
-      video.controls = false;
-    } else {
-      video.muted = false;
-      video.currentTime = 0;
-      video.controls = true;
-      video.style.objectFit = "contain";
-      await video.requestFullscreen();
-      video.play();
-    }
-  };
-
-  const handlePauseButton = () => {
-    if (!videoRef.current?.videoRef.current) return;
-    const video = videoRef.current.videoRef.current;
-    if (isPlaying) {
-      video.pause();
-    } else {
-      video.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
   useEffect(() => {
     const handleFullscreenChange = () => {
       if (!videoRef.current?.videoRef.current) return;
@@ -138,7 +106,7 @@ const Hero = () => {
       if (!document.fullscreenElement) {
         video.muted = true;
         video.controls = false;
-        video.style.objectFit = "cover"; // ensure it goes back to cover
+        video.style.objectFit = "cover";
       }
     };
 
@@ -184,45 +152,33 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-            <a
-              href={project?.link}
-              className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
-            >
-              Visitar Projeto
-              <ExternalLink strokeWidth={2.5} />
-            </a>
+            {project.link && project.link != "" ? (
+              <a
+                href={project?.link}
+                className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
+              >
+                Visitar Projeto
+                <ExternalLink strokeWidth={2.5} />
+              </a>
+            ) : null}
+
+            {project?.git && project?.git != "" && (
+              <a
+                href={project?.git}
+                className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
+              >
+                GitHub
+                <ExternalLink strokeWidth={2.5} />
+              </a>
+            )}
           </div>
           <div
-            id="heroVideo"
-            className="hero heroVideo relative w-full h-full z-0 lg:rounded-2xl !rounded-2xl overflow-hidden border-2 border-gray-50"
+            className={`"lg:max-h-[300svh] h-fit"
+          } overflow-hidden flex lg:gap-9 gap-6 `}
           >
-            <AdvancedVideo
-              cldVid={project?.pitch}
-              ref={videoRef}
-              className="w-full h-full object-cover cursor-pointer"
-              autoPlay
-              muted
-              loop
-              playsInline={true}
-              onClick={handleVideoClick}
-            />
-            <source type="video/mp4" />
-            <div
-              className="absolute bottom-3 right-3 z-10 text-gray cursor-pointer text-2xl"
-              onClick={handlePauseButton}
-            >
-              {isPlaying ? (
-                <Pause strokeWidth={2.5} />
-              ) : (
-                <Play strokeWidth={2.5} />
-              )}
-            </div>
-            <a
-              href={project.youtube}
-              className="!absolute bottom-3 left-3 z-10 text-gray text-xl link link--metis flex items-center gap-2"
-            >
-              YouTube
-            </a>
+            <video preload="none" muted autoPlay playsInline>
+              <source src={`/${project.video}.mp4`} />
+            </video>
           </div>
         </div>
         <div className="absolute heroBottom bottom-0 left-0 w-full common-py flex items-center justify-between">

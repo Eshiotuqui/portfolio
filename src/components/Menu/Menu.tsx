@@ -38,19 +38,19 @@ const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
           ease: "power4.inOut",
         });
       }, 400);
-      setMenu(false); // Close the menu
+      setMenu(false);
     } else {
       gsap.to(window, {
         duration: 2,
         scrollTo: "#Footer",
         ease: "power4.inOut",
       });
-      setMenu(false); // Close the menu
+      setMenu(false);
     }
   };
 
   const handleCloseMenu = () => {
-    setMenu(false); // Close the menu
+    setMenu(false);
   };
 
   return (
@@ -102,13 +102,13 @@ const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
       </ul>
       <div className="absolute bottom-0 left-0 w-full common-padding flex-center gap-6 text-3xl text-[var(--background)]">
         <a
-          href="https://www.linkedin.com/in/raul-clauson/"
+          href="https://www.linkedin.com/in/enzo-shiotuqui-385324266/"
           className="link link--metis hover:text-[var(--background)] transition-all"
         >
           Linkedin
         </a>
         <a
-          href="https://github.com/RaulClauson"
+          href="https://github.com/Eshiotuqui"
           className="link link--metis hover:text-[var(--background)] transition-all"
         >
           Github

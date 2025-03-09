@@ -4,16 +4,11 @@ import {
   animateVideoWithGsap,
   animateWithGsap,
 } from "../../../utils/animations";
-import { imgProject1 } from "../../../utils/utils";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
-  // No longer need refs for individual elements
-  // Instead use the class names to target the elements
-
   useGSAP(() => {
-    // Select all project item containers
     const projectItems = document.querySelectorAll(".project-item");
     projectItems.forEach((projectItem) => {
       const imgElement = projectItem.querySelector(
@@ -51,7 +46,6 @@ const Projects = () => {
           >
             <div className="flex flex-center overflow-hidden rounded-2xl relative">
               <picture>
-                <source srcSet={`/${project.image}.webp`} type="image/webp" />
                 <source srcSet={`/${project.image}.png`} type="image/png" />
                 <img
                   src={`/${project.image}.png`}
@@ -67,8 +61,7 @@ const Projects = () => {
                 autoPlay
                 playsInline
               >
-                <source src={`/${project.video}.webm`} type="video/webm" />
-                <source src={`/${project.video}.mp4`} type="video/mp4" />
+                <source src={`/${project.video}.mp4`} type="video/webm" />
               </video>
             </div>
             <div className="flex flex-col md:gap-2 gap-1">
@@ -77,25 +70,14 @@ const Projects = () => {
             </div>
           </Link>
         ))}
-        <div className="flex flex-col md:gap-4 gap-2">
-          <div className="flex flex-center overflow-hidden rounded-2xl relative">
-            <picture>
-              <source srcSet={`/${imgProject1}.webp`} type="image/webp" />
-              <source srcSet={`/${imgProject1}.png`} type="image/png" />
-              <img
-                src={`/${imgProject1}.png`}
-                className="homeImgProject opacity-0"
-                loading="lazy"
-              />
-            </picture>
-            <Link
-              to="/Projetos"
-              className="!absolute text-5xl link link--metis flex flex-center gap-2"
-            >
-              Ver todos projetos
-              <ArrowRight strokeWidth={2.5} className="lg:size-12 size-9" />
-            </Link>
-          </div>
+        <div className="flex flex-center md:gap-4 ">
+          <Link
+            to="/Projetos"
+            className="!absolute text-5xl link link--metis flex flex-center gap-2"
+          >
+            Ver todos projetos
+            <ArrowRight strokeWidth={2.5} className="lg:size-12 size-9" />
+          </Link>
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ const Controls: React.FC<ControlsProps> = ({ onNext, onPrev }) => {
   }, []);
   return (
     <div className="fixed bottom-0 left-0 w-full justify-between common-padding md:flex hidden">
-      <h2 className="hero text-2xl">Codando - 2021/2025</h2>
+      <h2 className="hero text-2xl">Codando - 2022/2025</h2>
       <div className="flex gap-2">
         <button className="projectsControl hero" onClick={onPrev}>
           <ChevronLeft />

@@ -49,7 +49,7 @@ importers:
         version: 0.20.0
       portfolio:
         specifier: 'file:'
-        version: file:(gsap@3.12.7)
+        version: 'file:'
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2657,7 +2657,7 @@ snapshots:
 
   pirates@4.0.6: {}
 
-  portfolio@file:(gsap@3.12.7):
+  'portfolio@file:':
     dependencies:
       '@cloudinary/react': 1.14.1(react@18.3.1)
       '@cloudinary/url-gen': 1.21.0
@@ -2667,6 +2667,7 @@ snapshots:
       '@studio-freight/react-lenis': 0.0.47(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@vercel/analytics': 1.5.0(react@18.3.1)
       framer-motion: 12.4.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      gsap: 3.12.7
       imagesloaded: 5.0.0
       lenis: 1.2.3(react@18.3.1)
       lucide-react: 0.473.0(react@18.3.1)
@@ -2681,7 +2682,6 @@ snapshots:
       - '@nuxt/kit'
       - '@remix-run/react'
       - '@sveltejs/kit'
-      - gsap
       - immer
       - next
       - svelte

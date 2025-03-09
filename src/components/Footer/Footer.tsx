@@ -1,51 +1,12 @@
-import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 import { ChevronUp } from "lucide-react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import CV from "/public/CV-EnzoShiotuqui.pdf";
+
 gsap.registerPlugin(ScrollToPlugin);
 import gsap from "gsap";
 
 const Footer = () => {
-  const STATE_MACHINE_NAME = "State Machine 1"; // Nome da sua State Machine
-  const INPUT_NAME = "Number"; // Nome da entrada usada no Rive
-
-  const { rive, RiveComponent } = useRive({
-    src: "/rive/Animation_white.riv", // Substitua pelo caminho do arquivo .riv
-    stateMachines: STATE_MACHINE_NAME,
-    autoplay: true,
-  });
-
-  // Controlar o input "Number" da State Machine
-  const numberInput = useStateMachineInput(
-    rive,
-    STATE_MACHINE_NAME,
-    INPUT_NAME
-  );
-
-  // Estado para controlar a ativação do random value
-  const [isCooldown, setIsCooldown] = useState(false);
-  const [lastValue, setLastValue] = useState<number | null>(null);
-
-  const handleMouseEnter = () => {
-    if (numberInput && !isCooldown) {
-      let randomValue: number;
-
-      // Gerar um novo valor que seja diferente do último
-      do {
-        randomValue = Math.floor(Math.random() * 3) + 1; // Random value between 1 and 3
-      } while (randomValue === lastValue);
-
-      numberInput.value = randomValue; // Atualizar o valor no Rive
-      setLastValue(randomValue); // Armazenar o novo valor como último gerado
-
-      setIsCooldown(true);
-      setTimeout(() => {
-        setIsCooldown(false); // Reativar após 2 segundos
-      }, 2000);
-    }
-  };
-
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
     gsap.to(window, {
@@ -93,7 +54,8 @@ const Footer = () => {
             <li className="md:mb-2 mb-1">Redes</li>
             <li>
               <a
-                href="https://www.linkedin.com/in/raul-clauson/"
+                target="_blank"
+                href="https://www.linkedin.com/in/enzo-shiotuqui-385324266/"
                 className="text-gray-400 link link--metis hover:text-[var(--color)] transition-all"
               >
                 Linkedin
@@ -101,7 +63,8 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://github.com/RaulClauson"
+                target="_blank"
+                href="https://github.com/Eshiotuqui"
                 className="text-gray-400 link link--metis hover:text-[var(--color)] transition-all"
               >
                 Github
@@ -113,19 +76,29 @@ const Footer = () => {
           <li className="md:mb-2 mb-1">Contato</li>
           <li>
             <a
-              href="mailto:rclauson141@gmail.com"
+              href="mailto:enzoshiotuqui.dev@gmail.com"
               className="text-gray-400 link link--metis hover:text-[var(--color)] transition-all"
             >
-              rclauson141@gmail.com
+              enzoshiotuqui.dev@gmail.com
+            </a>
+          </li>
+          <div></div>
+          <li className="md:mb-2 mb-1">Currículo</li>
+          <li>
+            <a
+              href={CV}
+              className="text-gray-400 link link--metis hover:text-[var(--color)] transition-all"
+              download
+            >
+              Baixar CV
             </a>
           </li>
         </ul>
       </div>
       <div className="w-full flex justify-between items-end gap-6">
-        <RiveComponent
-          className="sm:w-[500px] w-full sm:h-[115px] h-auto sm:aspect-auto aspect-[19/4] cursor-pointer mix-blend-difference"
-          onMouseEnter={handleMouseEnter}
-        />
+        <h1 className="text-2xl link link--metis flex flex-center flex-shrink-0 md:gap-2 gap-0">
+          Eshiotuqui
+        </h1>
         <a
           href="#"
           className="text-2xl link link--metis flex flex-center flex-shrink-0 md:gap-2 gap-0"

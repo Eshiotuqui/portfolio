@@ -71,60 +71,64 @@ const Achivements = () => {
         <div className="w-full common-my gsapPin flex flex-col gap-2">
           <div className="relative w-full h-[500px] rounded-2xl overflow-hidden flex items-end">
             <img
-              src="img/aboutAchivements.png"
+              src="img/POTENCIAL.jpg"
               className="gsapTextAchivements gsapImg opacity-0 translate-y-20 rounded-2xl absolute w-full h-full object-cover object-center"
-              alt="Eu e meu grupo recebendo a medálha de 1º lugar na EXCUTE"
+              alt="Potencial tecnologia LTDA"
             />
             <img
-              src="img/aboutAchivements2.png"
+              src="img/nexus.jpg"
               className="gsapTextAchivements gsapImg2 opacity-0 translate-y-20 rounded-2xl absolute w-full h-[0%] object-cover object-center"
-              alt="Eu e meu grupo apresentando nosso projeto no NEXT"
+              alt="Nexus software development"
             />
           </div>
           <div className="w-full h-[24px] relative flex overflow-hidden">
             <p className="gsapTextAchivements titleImgAbout gsapTextImg top-[0px]">
-              58º EXCUTE
+              Potencial Tecnologia
             </p>
             <p className="gsapTextAchivements textImgAbout gsapTextImg top-[0px]">
-              2023
+              2023 - 2024
             </p>
             <p className="gsapTextAchivements titleImgAbout gsapText2Img top-[24px]">
-              FIAP NEXT
+              Nexus
             </p>
             <p className="gsapTextAchivements textImgAbout gsapText2Img top-[24px]">
-              2024
+              2024 - 2025
             </p>
           </div>
         </div>
       </div>
       <div className="common-py max-w-[970px] flex flex-col gap-9">
         <div className="common-py flex flex-col gap-9">
-          <p className="gsapText2Achivements titleTextAbout">Melhor TCC</p>
-          <p className="gsapText2Achivements textAbout">
-            Durante minha trajetória na ETEC Jorge Street, participei da EXCUTE
-            com meu grupo e conquistamos o 1º lugar com nosso TCC. Foi uma
-            experiência inesquecível, repleta de desafios e aprendizados.
+          <p className="gsapText2Achivements titleTextAbout">
+            Potencial tecnologia
           </p>
           <p className="gsapText2Achivements textAbout">
-            Esse reconhecimento reforçou minha paixão por tecnologia e inovação,
-            mostrando o impacto que boas ideias, dedicação e trabalho em equipe
-            podem gerar.
+            Foi a primeira empresa que trabalhei como dev, iniciei em 2023 como
+            estagiário, e em 2024 fui promovido para júnior. Foi uma
+            oportunidade incrível para eu poder aprender e crescer como
+            desenvolvedor.
+          </p>
+          <p className="gsapText2Achivements textAbout">
+            Durante a jornada aprendi muito sobre o front-end, sobre tecnologias
+            como Vue.js e python e aprendi principalmente responsabilidades
+            sobre a vida de um developer, como trabalho em equipe, comunicação,
+            trabalho em projetos, etc.
           </p>
         </div>
         <div className="gsapText2Achivements division"></div>
         <div className="common-py flex flex-col gap-9">
           <p className="gsapText2Achivements titleTextAbout">
-            Finalistas Challenge
+            Nexus software development
           </p>
           <p className="gsapText2Achivements textAbout">
-            Durante minha jornada na FIAP, tive a honra de apresentar, junto com
-            meu grupo, nosso projeto no NEXT, a maior feira de tecnologia do
-            Brasil. Chegar até lá foi uma grande conquista, fruto de muito
-            esforço e dedicação.
+            Logo após entrei na nexus como Dev. Foi uma oportunidade incrível
+            para provar minhas habilidades e conhecimentos em um ambiente
+            profissional. Atuei como um prestador de serviço em vários projetos,
+            cada um com suas características e desafios.
           </p>
           <p className="gsapText2Achivements textAbout">
-            Foi incrível estar entre grandes talentos e compartilhar nossa
-            solução em um evento tão importante para o futuro da tecnologia.
+            Foi incrível para treinar meus conhecimentos em React e typescript,
+            além de aprender muito sobre clean code e padrões no front-end
           </p>
         </div>
       </div>

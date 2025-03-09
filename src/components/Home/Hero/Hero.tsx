@@ -1,20 +1,33 @@
+import { useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 import gsap from "gsap";
 import { heroAnimateWithGsap } from "../../../utils/animations";
-import { ChevronDown, Pause, Play } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
-import { heroVideo, smallHeroVideo } from "../../../utils/utils";
-import {
-  AdvancedVideo,
-  AdvancedVideo as AdvancedVideoComponent,
-} from "@cloudinary/react";
+import { ChevronDown } from "lucide-react";
+
+import parcele from "/media/gif/parcele.gif";
+import clima from "/media/gif/clima.gif";
+import thanos from "/media/gif/thanos.gif";
+import comida from "/media/gif/food.gif";
 
 const Hero = () => {
-  const [videoSrc, setVideoSrc] = useState(heroVideo);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const videoRef = useRef<AdvancedVideoComponent | null>(null); // Ref for the AdvancedVideo component
+  const [gif, setGif] = useState<string>("");
+
+  useEffect(() => {
+    const gifs = [parcele, clima, thanos, comida];
+
+    const changeGif = () => {
+      const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+      setGif(randomGif);
+    };
+
+    changeGif();
+
+    const intervalId = setInterval(changeGif, 25000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   useGSAP(() => {
     heroAnimateWithGsap(".hero");
@@ -29,91 +42,21 @@ const Hero = () => {
     });
   };
 
-  const handleVideoClick = async () => {
-    if (!videoRef.current?.videoRef.current) return;
-    const video = videoRef.current.videoRef.current;
-
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-      video.style.objectFit = "cover";
-      video.muted = true;
-      video.controls = false;
-    } else {
-      video.muted = false;
-      video.currentTime = 0;
-      video.controls = true;
-      video.style.objectFit = "contain";
-      await video.requestFullscreen();
-      video.play();
-    }
-  };
-
-  const handlePauseButton = () => {
-    if (!videoRef.current?.videoRef.current) return;
-    const video = videoRef.current.videoRef.current;
-    if (isPlaying) {
-      video.pause();
-    } else {
-      video.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleResize = () => {
-    if (window.innerWidth < 760) {
-      setVideoSrc(smallHeroVideo);
-    } else {
-      setVideoSrc(heroVideo);
-    }
-  };
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    const handleFullscreenChange = () => {
-      if (!videoRef.current?.videoRef.current) return;
-      const video = videoRef.current.videoRef.current;
-      if (!document.fullscreenElement) {
-        video.muted = true;
-        video.controls = false;
-        video.style.objectFit = "cover";
-      }
-    };
-
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-    };
-  }, []);
-
   return (
     <section
       id="Hero"
-      className="w-full h-[100svh] common-padding flex flex-col justify-between"
+      className="w-full h-[140svh] common-padding flex flex-col justify-between"
     >
-      <div className="min-h-[23px]"></div>
+      <div className="min-h-[120px]"></div>
+
       <div
         id="heroVideo"
-        className="hero relative w-full h-full common-my z-0 rounded-2xl overflow-hidden border-2 border-gray-50"
+        className="hero relative w-full min-h-[100px]  common-my z-0 rounded-2xl overflow-hidden border-2 border-gray-50"
       >
-        <AdvancedVideo
-          ref={videoRef}
-          className="w-full h-full object-cover cursor-pointer"
-          autoPlay
-          muted
-          loop
-          playsInline={true}
-          onClick={handleVideoClick}
-          cldVid={videoSrc}
-        />
-        <div
-          className="absolute bottom-3 right-3 z-10 text-gray cursor-pointer text-2xl"
-          onClick={handlePauseButton}
-        >
-          {isPlaying ? <Pause strokeWidth={2.5} /> : <Play strokeWidth={2.5} />}
-        </div>
+        <h1 className="text-2xl  flex flex-center ">
+          Preview de alguns projetos
+        </h1>
+        <img src={gif} className="w-full " alt="Hero GIF" />
       </div>
       <div className="w-full flex justify-between items-end">
         <div className="flex flex-col gap-2">

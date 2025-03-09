@@ -39,15 +39,6 @@ const Credits = () => {
             ))}
         </div>
       </div>
-      <picture className="gsap lg:w-[65%] w-full lg:rounded-3xl rounded-2xl border-2 border-gray-50 overflow-hidden">
-        <source srcSet={`/${project.team}.webp`} type="image/webp" />
-        <source srcSet={`/${project.team}.png`} type="image/png" />
-        <img
-          src={`/${project.team}.png`}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </picture>
     </section>
   );
 };

@@ -124,7 +124,6 @@ const Projects: React.FC = () => {
           >
             <div className="h-full flex flex-center overflow-hidden rounded-2xl relative">
               <picture className="homeImgProject cursor-pointer">
-                <source srcSet={`/${project.image}.webp`} type="image/webp" />
                 <source srcSet={`/${project.image}.png`} type="image/png" />
                 <img
                   src={`/${project.image}.png`}
@@ -140,7 +139,6 @@ const Projects: React.FC = () => {
                 autoPlay
                 playsInline
               >
-                <source src={`/${project.video}.webm`} type="video/webm" />
                 <source src={`/${project.video}.mp4`} type="video/mp4" />
               </video>
             </div>

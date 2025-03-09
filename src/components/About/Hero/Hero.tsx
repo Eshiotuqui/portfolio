@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="min-h-[23px]"></div>
       <div className="heroAbout w-full h-[125lvh] flex flex-center common-my rounded-3xl overflow-hidden">
         <GridDistortion
-          imageSrc="img/aboutHero.png"
+          imageSrc="img/enzo_foto.jpg"
           grid={30}
           mouse={0.1}
           strength={0.15}

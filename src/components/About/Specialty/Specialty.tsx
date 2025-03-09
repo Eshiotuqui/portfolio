@@ -9,22 +9,17 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 const TriangleLogo = "img/icons/Frame-9.png";
-const ParallelogramLogo = "img/icons/Frame-1.png";
 const RhombusLogo = "img/icons/Frame-7.png";
 const HexagonLogo = "img/icons/Frame-12.png";
+const Hexagon1Logo = "img/icons/frame-18.png";
+const Hexagon2Logo = "img/icons/frame-19.png";
 const PentagonLogo = "img/icons/Frame-10.png";
 const Pentagon1Logo = "img/icons/Frame-11.png";
-const Circle1Logo = "img/icons/Frame-14.png";
 const Circle2Logo = "img/icons/Frame-15.png";
 const Circle3Logo = "img/icons/Frame-16.png";
 const Circle4Logo = "img/icons/Frame-17.png";
-const Circle5Logo = "img/icons/Frame-19.png";
-const Circle6Logo = "img/icons/Frame-20.png";
 const SquareLogo = "img/icons/Frame-2.png";
 const Square1Logo = "img/icons/Frame-3.png";
-const Square2Logo = "img/icons/Frame-4.png";
-const Square3Logo = "img/icons/Frame-5.png";
-const RectangleLogo = "img/icons/Frame-18.png";
 const Rectangle1Logo = "img/icons/Frame-8.png";
 
 const Specialty = () => {
@@ -221,29 +216,6 @@ const Specialty = () => {
           },
         }
       ),
-      // Parallelogram
-      Matter.Bodies.fromVertices(
-        Math.random() * (window.innerWidth - 100) + 50,
-        Math.random() * (containerHeight / 2) + 50,
-        [
-          [
-            { x: -20 / (isMobile ? 1.5 : 1), y: -40 / (isMobile ? 1.5 : 1) }, // Top left
-            { x: 60 / (isMobile ? 1.5 : 1), y: -25 / (isMobile ? 1.5 : 1) }, // Top right
-            { x: 20 / (isMobile ? 1.5 : 1), y: 40 / (isMobile ? 1.5 : 1) }, // Bottom right
-            { x: -60 / (isMobile ? 1.5 : 1), y: 25 / (isMobile ? 1.5 : 1) }, // Bottom left
-          ],
-        ],
-        {
-          restitution: 0.6,
-          render: {
-            sprite: {
-              texture: ParallelogramLogo,
-              xScale: 45 / 50 / (isMobile ? 1.5 : 1),
-              yScale: 45 / 50 / (isMobile ? 1.5 : 1),
-            },
-          },
-        }
-      ),
       // Square rotated 45 degrees (diamond shape)
       Matter.Bodies.fromVertices(
         Math.random() * (window.innerWidth - 100) + 50,
@@ -294,6 +266,57 @@ const Specialty = () => {
           },
         }
       ),
+      Matter.Bodies.fromVertices(
+        Math.random() * (window.innerWidth - 100) + 50,
+        Math.random() * (containerHeight / 2) + 50,
+        [
+          [
+            { x: 0, y: -55 / (isMobile ? 1.5 : 1) }, // Top point
+            { x: 48.3 / (isMobile ? 1.5 : 1), y: -30 / (isMobile ? 1.5 : 1) }, // Upper right
+            { x: 48.3 / (isMobile ? 1.5 : 1), y: 30 / (isMobile ? 1.5 : 1) }, // Lower right
+            { x: 0, y: 55 / (isMobile ? 1.5 : 1) }, // Bottom point
+            { x: -48.3 / (isMobile ? 1.5 : 1), y: 30 / (isMobile ? 1.5 : 1) }, // Lower left
+            { x: -48.3 / (isMobile ? 1.5 : 1), y: -30 / (isMobile ? 1.5 : 1) }, // Upper left
+          ],
+        ],
+        {
+          restitution: 0.6,
+          frictionAir: 0.001,
+          render: {
+            sprite: {
+              texture: Hexagon1Logo,
+              xScale: 40 / 50 / (isMobile ? 1.5 : 1),
+              yScale: 40 / 50 / (isMobile ? 1.5 : 1),
+            },
+          },
+        }
+      ),
+      Matter.Bodies.fromVertices(
+        Math.random() * (window.innerWidth - 100) + 50,
+        Math.random() * (containerHeight / 2) + 50,
+        [
+          [
+            { x: 0, y: -55 / (isMobile ? 1.5 : 1) }, // Top point
+            { x: 48.3 / (isMobile ? 1.5 : 1), y: -30 / (isMobile ? 1.5 : 1) }, // Upper right
+            { x: 48.3 / (isMobile ? 1.5 : 1), y: 30 / (isMobile ? 1.5 : 1) }, // Lower right
+            { x: 0, y: 55 / (isMobile ? 1.5 : 1) }, // Bottom point
+            { x: -48.3 / (isMobile ? 1.5 : 1), y: 30 / (isMobile ? 1.5 : 1) }, // Lower left
+            { x: -48.3 / (isMobile ? 1.5 : 1), y: -30 / (isMobile ? 1.5 : 1) }, // Upper left
+          ],
+        ],
+        {
+          restitution: 0.6,
+          frictionAir: 0.001,
+          render: {
+            sprite: {
+              texture: Hexagon2Logo,
+              xScale: 40 / 50 / (isMobile ? 1.5 : 1),
+              yScale: 40 / 50 / (isMobile ? 1.5 : 1),
+            },
+          },
+        }
+      ),
+
       // Pentagon using fromVertices
       Matter.Bodies.fromVertices(
         Math.random() * (window.innerWidth - 100) + 50,
@@ -353,22 +376,6 @@ const Specialty = () => {
           restitution: 0.6,
           render: {
             sprite: {
-              texture: Circle1Logo,
-              xScale: 42 / 50 / (isMobile ? 1.5 : 1),
-              yScale: 42 / 50 / (isMobile ? 1.5 : 1),
-            },
-          },
-        }
-      ),
-      // Circle
-      Matter.Bodies.circle(
-        Math.random() * (window.innerWidth - 100) + 50,
-        Math.random() * (containerHeight / 2) + 50,
-        50 / (isMobile ? 1.5 : 1), // radius
-        {
-          restitution: 0.6,
-          render: {
-            sprite: {
               texture: Circle2Logo,
               xScale: 42 / 50 / (isMobile ? 1.5 : 1),
               yScale: 42 / 50 / (isMobile ? 1.5 : 1),
@@ -402,38 +409,6 @@ const Specialty = () => {
           render: {
             sprite: {
               texture: Circle4Logo,
-              xScale: 42 / 50 / (isMobile ? 1.5 : 1),
-              yScale: 42 / 50 / (isMobile ? 1.5 : 1),
-            },
-          },
-        }
-      ),
-      // Circle
-      Matter.Bodies.circle(
-        Math.random() * (window.innerWidth - 100) + 50,
-        Math.random() * (containerHeight / 2) + 50,
-        50 / (isMobile ? 1.5 : 1), // radius
-        {
-          restitution: 0.6,
-          render: {
-            sprite: {
-              texture: Circle5Logo,
-              xScale: 42 / 50 / (isMobile ? 1.5 : 1),
-              yScale: 42 / 50 / (isMobile ? 1.5 : 1),
-            },
-          },
-        }
-      ),
-      // Circle
-      Matter.Bodies.circle(
-        Math.random() * (window.innerWidth - 100) + 50,
-        Math.random() * (containerHeight / 2) + 50,
-        50 / (isMobile ? 1.5 : 1), // radius
-        {
-          restitution: 0.6,
-          render: {
-            sprite: {
-              texture: Circle6Logo,
               xScale: 42 / 50 / (isMobile ? 1.5 : 1),
               yScale: 42 / 50 / (isMobile ? 1.5 : 1),
             },
@@ -484,78 +459,6 @@ const Specialty = () => {
               texture: Square1Logo,
               xScale: 40 / 50 / (isMobile ? 1.5 : 1),
               yScale: 40 / 50 / (isMobile ? 1.5 : 1),
-            },
-          },
-        }
-      ),
-      // Square
-      Matter.Bodies.fromVertices(
-        Math.random() * (window.innerWidth - 100) + 50,
-        Math.random() * (containerHeight / 2) + 50,
-        [
-          [
-            { x: -47 / (isMobile ? 1.5 : 1), y: -47 / (isMobile ? 1.5 : 1) }, // Top left
-            { x: 47 / (isMobile ? 1.5 : 1), y: -47 / (isMobile ? 1.5 : 1) }, // Top right
-            { x: 47 / (isMobile ? 1.5 : 1), y: 47 / (isMobile ? 1.5 : 1) }, // Bottom right
-            { x: -47 / (isMobile ? 1.5 : 1), y: 47 / (isMobile ? 1.5 : 1) }, // Bottom left
-          ],
-        ],
-        {
-          restitution: 0.6,
-          frictionAir: 0.001,
-          render: {
-            sprite: {
-              texture: Square2Logo,
-              xScale: 40 / 50 / (isMobile ? 1.5 : 1),
-              yScale: 40 / 50 / (isMobile ? 1.5 : 1),
-            },
-          },
-        }
-      ),
-      // Square
-      Matter.Bodies.fromVertices(
-        Math.random() * (window.innerWidth - 100) + 50,
-        Math.random() * (containerHeight / 2) + 50,
-        [
-          [
-            { x: -47 / (isMobile ? 1.5 : 1), y: -47 / (isMobile ? 1.5 : 1) }, // Top left
-            { x: 47 / (isMobile ? 1.5 : 1), y: -47 / (isMobile ? 1.5 : 1) }, // Top right
-            { x: 47 / (isMobile ? 1.5 : 1), y: 47 / (isMobile ? 1.5 : 1) }, // Bottom right
-            { x: -47 / (isMobile ? 1.5 : 1), y: 47 / (isMobile ? 1.5 : 1) }, // Bottom left
-          ],
-        ],
-        {
-          restitution: 0.6,
-          frictionAir: 0.001,
-          render: {
-            sprite: {
-              texture: Square3Logo,
-              xScale: 40 / 50 / (isMobile ? 1.5 : 1),
-              yScale: 40 / 50 / (isMobile ? 1.5 : 1),
-            },
-          },
-        }
-      ),
-      // Rectangle
-      Matter.Bodies.fromVertices(
-        Math.random() * (window.innerWidth - 100) + 50,
-        Math.random() * (containerHeight / 2) + 50,
-        [
-          [
-            { x: -65 / (isMobile ? 1.5 : 1), y: -25 / (isMobile ? 1.5 : 1) }, // Top left
-            { x: 65 / (isMobile ? 1.5 : 1), y: -25 / (isMobile ? 1.5 : 1) }, // Top right
-            { x: 65 / (isMobile ? 1.5 : 1), y: 25 / (isMobile ? 1.5 : 1) }, // Bottom right
-            { x: -65 / (isMobile ? 1.5 : 1), y: 25 / (isMobile ? 1.5 : 1) }, // Bottom left
-          ],
-        ],
-        {
-          restitution: 0.6,
-          frictionAir: 0.001,
-          render: {
-            sprite: {
-              texture: RectangleLogo,
-              xScale: 38 / 50 / (isMobile ? 1.5 : 1),
-              yScale: 38 / 50 / (isMobile ? 1.5 : 1),
             },
           },
         }
@@ -640,7 +543,7 @@ const Specialty = () => {
       ref={ref}
       className="flex justify-between common-padding flex-col gap-9"
     >
-      <h2 className="gsapTextSpecialty titleAbout">Especialidades</h2>
+      <h2 className="gsapTextSpecialty titleAbout">Tecnologias</h2>
       <div className="h-[550px] w-full gsapTextSpecialty opacity-0 translate-y-20">
         <div ref={sceneRef} className="physics-container" />
       </div>

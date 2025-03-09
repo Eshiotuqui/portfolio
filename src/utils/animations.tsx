@@ -8,7 +8,7 @@ let isFirstVisit = true;
 
 export const headerAnimateWithGsap = (target: string) => {
   // Define o delay com base na variável isFirstVisit
-  const delayHeader = isFirstVisitHeader ? 2.75 : 0.3;
+  const delayHeader = isFirstVisitHeader ? 0.75 : 0.3;
   if (isFirstVisit) {
     gsap.to(target, {
       translateY: 0,
@@ -19,7 +19,6 @@ export const headerAnimateWithGsap = (target: string) => {
       stagger: 0.2,
       ease: "power4.out",
       onComplete: () => {
-        // Se for a primeira visita, seta a variável para false, pra que não tenha delay em próximas animações
         if (isFirstVisitHeader) {
           isFirstVisitHeader = false;
         }
@@ -29,7 +28,7 @@ export const headerAnimateWithGsap = (target: string) => {
 };
 
 export const heroAnimateWithGsap = (target: string, stagger?: number) => {
-  const delay = isFirstVisit ? 2.95 : 0.3;
+  const delay = isFirstVisit ? 0.75 : 0.3;
   gsap.to(target, {
     translateY: 0,
     translateX: 0,
@@ -47,7 +46,7 @@ export const heroAnimateWithGsap = (target: string, stagger?: number) => {
 };
 
 export const heroAboutAnimateWithGsap = (target: string, target2: string) => {
-  const delay = isFirstVisit ? 2.95 : 0.3;
+  const delay = isFirstVisit ? 0.75 : 0.3;
   gsap.to(target, {
     translateY: 0,
     opacity: 1,
