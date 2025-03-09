@@ -66,7 +66,7 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
             className="lg:w-[100px] w-auto justify-end cursor-pointer sm:flex hidden"
             download
           >
-            Baixar CV
+            CV
           </a>
         </div>
 
