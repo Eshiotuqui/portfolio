@@ -11,6 +11,8 @@ import {
   videoThanos,
   videoPig,
   imgPig,
+  imgAmed,
+  videoAmed
 } from "../utils/utils";
 
 export const projects = [
@@ -110,4 +112,21 @@ export const projects = [
     git: "https://github.com/Eshiotuqui/Food-Theme",
     pitch: videoPig,
   },
+  {
+    id: "Amed",
+    title: "Amed",
+    subtitle: "Controle de escala médica com amed",
+    description: "Site que fiz com a nexus para controle de escala médica, controle de hospitais, controle de gastos em hospitalXmédico, dashboard, calendário etc",
+    image: imgAmed,
+    video: videoAmed,
+    link: "",
+    year: "(2025) Jan - Presente",
+    credits: [
+      { name: "Nexus", work: "Empresa" },
+      { name: "Enzo Shiotuqui", work: "Dev" },
+    ],
+    services: ["Web Development", "Web Design", "React", "TS"],
+    git: "",
+    pitch: videoAmed,
+  }
 ];

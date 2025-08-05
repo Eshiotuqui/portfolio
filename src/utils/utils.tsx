@@ -15,3 +15,6 @@ export const videoThanos = "media/Videos/thanos_video";
 
 export const imgPig = "media/Imagens/pig";
 export const videoPig = "media/Videos/pig_video";
+
+export const imgAmed = "media/Imagens/amed";
+export const videoAmed = "media/Amed/dash"
