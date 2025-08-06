@@ -50,7 +50,7 @@ const About = () => {
       className="w-full overflow-hidden common-padding flex justify-between lg:flex-row flex-col lg:gap-16 md:gap-11 sm:gap-6 gap-6 bg-[var(--background)]"
     >
       <div className="text-2xl text-gray flex-shrink-0">
-        <p className="about sm:pl-12 pl-0">Desenvolvedor Front-End!</p>
+        <p className="about sm:pl-12 pl-0">Desenvolvedor Full stack!</p>
         <p className="about sm:pl-6 pl-0">
           Apaixonado por projetos únicos, intuitivos e
         </p>
@@ -72,7 +72,7 @@ const About = () => {
         </div>
       </div>
       <div className="text-2xl opacity-0 flex-shrink-0 2xl:block hidden pointer-events-none">
-        <p className="pl-12">Desenvolvedor Front-End!</p>
+        <p className="pl-12">Desenvolvedor Full stack!</p>
         <p className="pl-6">Apaixonado por projetos únicos, intuitivos e</p>
         <p>experiências digitais marcantes.</p>
       </div>

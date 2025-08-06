@@ -61,7 +61,7 @@ const Hero = () => {
       <div className="w-full flex justify-between items-end">
         <div className="flex flex-col gap-2">
           <p className="hero text-3xl text-gray">Desenvolvedor</p>
-          <h1 className="hero text-8xl">Front-End</h1>
+          <h1 className="hero text-8xl">Full Stack</h1>
         </div>
         <button
           onClick={scrollToAbout}

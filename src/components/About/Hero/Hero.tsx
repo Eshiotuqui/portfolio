@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="w-full flex justify-between lg:items-end items-start lg:flex-row flex-col lg:gap-16 gap-3">
         <h1 className="gsap text-8xl flex-shrink-0">Enzo Shiotuqui</h1>
         <p className="gsap text-3xl text-gray-400 max-w-[970px]">
-          Olá, me chamo Enzo e sou Desenvolvedor Front-End com paixão por
+          Olá, me chamo Enzo e sou Desenvolvedor Full stack com paixão por
           interfaces intuitivas e experiências digitais marcantes.{" "}
         </p>
       </div>
