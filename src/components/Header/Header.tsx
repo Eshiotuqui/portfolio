@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { headerAnimateWithGsap } from "../../utils/animations";
 import { AlignJustify, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import CV from "/public/CV-EnzoShiotuqui.pdf";
+import CV from "/public/CV-EnzoShiotuqui_PT.pdf";
 
 interface MenuProps {
   menu: boolean;

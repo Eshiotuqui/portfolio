@@ -1,12 +1,16 @@
 import { ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import CV from "/public/CV-EnzoShiotuqui.pdf";
+import CV_PT from "/public/CV-EnzoShiotuqui_PT.pdf";
+import CV_EN from "/public/CV-EnzoShiotuqui_EN.pdf";
 
 gsap.registerPlugin(ScrollToPlugin);
 import gsap from "gsap";
+import { useState } from "react";
 
 const Footer = () => {
+  const [cvLang, setCvLang] = useState<"pt" | "en">("pt");
+
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
     gsap.to(window, {
@@ -15,6 +19,8 @@ const Footer = () => {
       ease: "power4.inOut",
     });
   };
+
+  const cvFile = cvLang === "pt" ? CV_PT : CV_EN;
 
   return (
     <footer
@@ -82,11 +88,21 @@ const Footer = () => {
               enzoshiotuqui.dev@gmail.com
             </a>
           </li>
+
           <div></div>
           <li className="md:mb-2 mb-1">Currículo</li>
-          <li>
+          <li className="flex flex-col gap-2">
+            <select
+              value={cvLang}
+              onChange={(e) => setCvLang(e.target.value as "pt" | "en")}
+              className="border border-gray-300 rounded-lg px-2 py-1 text-base focus:outline-none focus:ring-2 focus:ring-[var(--color)]"
+            >
+              <option value="pt">Português</option>
+              <option value="en">English</option>
+            </select>
+
             <a
-              href={CV}
+              href={cvFile}
               className="text-gray-400 link link--metis hover:text-[var(--color)] transition-all"
               download
             >
@@ -95,6 +111,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+
       <div className="w-full flex justify-between items-end gap-6">
         <h1 className="text-2xl link link--metis flex flex-center flex-shrink-0 md:gap-2 gap-0">
           Eshiotuqui
