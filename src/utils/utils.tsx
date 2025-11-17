@@ -18,3 +18,6 @@ export const videoPig = "media/Videos/pig_video";
 
 export const imgAmed = "media/Imagens/amed";
 export const videoAmed = "media/Amed/dash"
+
+export const imgNortus = "media/Imagens/nortus";
+export const videoNortus = "media/Videos/nortus_video";

@@ -12,7 +12,9 @@ import {
   videoPig,
   imgPig,
   imgAmed,
-  videoAmed
+  videoAmed,
+  videoNortus,
+  imgNortus
 } from "../utils/utils";
 
 export const projects = [
@@ -128,5 +130,21 @@ export const projects = [
     services: ["Web Development", "Web Design", "React", "TS"],
     git: "",
     pitch: videoAmed,
+  },
+  {
+    id: "Nortus",
+    title: "Nortus",
+    subtitle: "CRM para controle de clientes e vendas",
+    description: "Site que fiz para um processo seletivo, A nortus é uma empresa de tecnologia que desenvolve software para controle de clientes e vendas, com login, cadastro de tickets, controle de planos, dashboard, etc (Para mais informações, acesse o github)",
+    image: imgNortus,
+    video: videoNortus,
+    link: "https://nortus-loomi-seven.vercel.app/auth/sign-in",
+    year: "(2025) Oct - Nov",
+    credits: [
+      { name: "Enzo Shiotuqui", work: "Dev" },
+    ],
+    services: ["Web Development", "Web Design", "React", "TS", "Next.js"],
+    git: "https://github.com/Eshiotuqui/Nortus",
+    pitch: videoNortus,
   }
 ];
